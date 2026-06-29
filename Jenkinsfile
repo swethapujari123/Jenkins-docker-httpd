@@ -1,7 +1,13 @@
 pipeline {
 
     agent any
-
+parameters {
+        choice(
+            name: 'BRANCH',
+            choices: ['q1', 'q2', 'q3'],
+            description: 'Select branch to deploy'
+        ) 
+}
     stages {
 
         stage('Checkout') {
